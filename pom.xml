@@ -60,6 +60,13 @@
 			<version>${zeebe.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- for simple starter website -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.7.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
