@@ -1,2 +1,2 @@
-# customer-onboarding
+# Customer Onboarding
 Customer Onboarding Process
