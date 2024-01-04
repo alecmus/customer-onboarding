@@ -1,0 +1,28 @@
+<html>
+
+<body>
+  <h1>Awesome website that allows to open a new bank account</h1>
+
+  <p>Typically, some data would be collected here...</p>
+
+  <button onclick="submitNewCustomerOrder()">Open bank account</button>
+  
+  <div id="thanks"></div>
+</body>
+
+	<script type="text/javascript">
+    var count = 0;
+		function submitNewCustomerOrder() {
+			 $.ajax({
+              url: "./customer",
+              type: "put",
+              data: {}
+          }).done(function(result) {
+            count = count + 1;
+            $('#thanks').html('Bank account application successfuly submitted. #' + count);
+          })
+		}
+	</script>
+  <script src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+
+</html>
