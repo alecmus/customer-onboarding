@@ -1,6 +1,8 @@
 package com.github.alecmus.customeronboarding.rest;
 
 import io.camunda.zeebe.client.ZeebeClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,8 @@ public class CustomerOnboardingRestController {
     @Value("${recipient.demo.email}")
     private String recipientDemoEmail;
 
+    Logger logger = LoggerFactory.getLogger(CustomerOnboardingRestController.class);
+
     @PutMapping("/customer")
     public ResponseEntity<CustomerOnboardingResponse> onboardCustomer(ServerWebExchange exchange) {
         onboardCustomer();
@@ -26,6 +30,8 @@ public class CustomerOnboardingRestController {
     }
 
     public void onboardCustomer() {
+        logger.info("onboarding customer");
+
         HashMap<String, Object> variables = new HashMap<>();
         variables.put("automaticProcessing", true);
         variables.put("someInput", "yeah");
